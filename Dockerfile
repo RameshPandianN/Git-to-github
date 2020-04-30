@@ -11,5 +11,7 @@ COPY .  /Jenkinsfile
 
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
+RUN ["chmod", "+x", "/entrypoint.sh"]
 
+RUN ["chmod", "+x", "/usr/bin/foxx"]
 ENTRYPOINT ["/Jenkinsfile"]
