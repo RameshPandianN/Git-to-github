@@ -8,7 +8,7 @@ checkout scm
 }
 stage('build image')
 {
-app=docker.build("995254/dockerizedjenkinspipeline")
+app=docker.build("995254/dockerpipeline")
 }
 stage('test image')
 {
@@ -18,7 +18,7 @@ echo "Tests passed"
 }
 stage('push image')
 {
-docker.withRegistry('https://registry.hub.docker.com','a347a119-f521-4940-8bbf-1901a5a9e905'){
+docker.withRegistry('https://registry.hub.docker.com','docker-hub'){
 app.push("${env.BUILD_NUMBER}")
 app.push("latest")
 }
