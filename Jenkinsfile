@@ -18,7 +18,7 @@ echo "Tests passed"
 }
 stage('push image')
 {
-docker.withRegistry('https://registry.hub.docker.com','docker-hub'){
+docker.withRegistry('https://registry.hub.docker.com','a347a119-f521-4940-8bbf-1901a5a9e905'){
 app.push("${env.BUILD_NUMBER}")
 app.push("latest")
 }
