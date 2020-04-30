@@ -8,7 +8,7 @@ checkout scm
 }
 stage('build image')
 {
-app=docker.build("995252/Dockerizedpipeline")
+app=docker.build("995254/dockerizedjenkinspipeline")
 }
 stage('test image')
 {
