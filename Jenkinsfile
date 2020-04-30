@@ -18,7 +18,7 @@ echo "Tests passed"
 stage('push image')
 {
 docker.withRegistry('https://registry.hub.docker.com','docker-hub'){
-app.push("$(env.BUILD_NUMBER}")
+app.push("${env.BUILD_NUMBER}")
 app.push("latest")
 }
 echo "trying to push docker buid to docker hub"
