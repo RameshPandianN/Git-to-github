@@ -8,7 +8,7 @@ checkout scm
 }
 stage('build image')
 {
-app=docker.build("995254/dockerpipeline")
+app=sudo docker.build("995254/dockerpipeline")
 }
 stage('test image')
 {
@@ -18,7 +18,7 @@ echo "Tests passed"
 }
 stage('push image')
 {
-docker.withRegistry('https://registry.hub.docker.com','docker-hub'){
+sudo docker.withRegistry('https://registry.hub.docker.com','docker-hub'){
 app.push("${env.BUILD_NUMBER}")
 app.push("latest")
 }
